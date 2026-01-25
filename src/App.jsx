@@ -1,13 +1,12 @@
-import './App.css'
+import "./App.css";
+import { Card } from "./components";
 
 function App() {
- 
-
   return (
     <>
-     <p>hello</p>
+      <Card />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
