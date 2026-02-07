@@ -1,0 +1,33 @@
+.buttons-panel{
+    display: flex;
+   gap: 25px;
+    justify-content: center;
+     align-items: center;
+}
+.buttons-panel button {
+    padding: 10px 20px;
+    background-color: #d54f4f;
+    color: #fff;
+     border: none;
+    
+
+}
+.time-display-panel{
+    display:flex;
+     gap: 25px;
+     justify-content: center;
+     align-items: center;
+    
+}
+.time-display-panel div{
+    width:200px;
+    height:200px;
+    background-color: #282727;
+    color: #fff;
+
+}
+
+.margin-top-20{
+    margin-top: 20px;
+
+}
