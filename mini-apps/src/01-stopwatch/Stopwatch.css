@@ -1,33 +1,79 @@
-.buttons-panel{
-    display: flex;
-   gap: 25px;
-    justify-content: center;
-     align-items: center;
-}
-.buttons-panel button {
-    padding: 10px 20px;
-    background-color: #d54f4f;
-    color: #fff;
-     border: none;
-    
-
-}
-.time-display-panel{
-    display:flex;
-     gap: 25px;
-     justify-content: center;
-     align-items: center;
-    
-}
-.time-display-panel div{
-    width:200px;
-    height:200px;
-    background-color: #282727;
-    color: #fff;
-
+.stopwatch-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: Arial, sans-serif;
 }
 
-.margin-top-20{
-    margin-top: 20px;
+.stopwatch-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
 
+.stopwatch-title {
+  margin: 0 0 30px 0;
+  font-size: 32px;
+  color: #333;
+  font-weight: 600;
+}
+
+.stopwatch-display {
+  font-size: 64px;
+  font-family: monospace;
+  margin: 30px 0;
+  color: #667eea;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.stopwatch-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.stopwatch-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+ 
+}
+
+.stopwatch-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stopwatch-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.stopwatch-btn:disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+.btn-start {
+  background: #4CAF50;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-stop {
+  background: #f44336;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.btn-reset {
+  background: #2196F3;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
 }
