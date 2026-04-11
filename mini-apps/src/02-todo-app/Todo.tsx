@@ -65,7 +65,30 @@ const Todo = ({ className }: TodoProps) => {
       <header className="p-6 text-center">
         <h1 className="text-2xl font-bold">My Tasks</h1>
       </header>
-      <div className="flex flex-row">
+      <form
+        className="flex flex-row"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addTask();
+        }}
+      >
+        <label htmlFor="new-todo-input" className="sr-only">
+          {/* Hidden label for screen readers */}
+          New task
+        </label>
+        <input
+          id="new-task-input"
+          type="text"
+          value={inputText}
+          ref={taskInput}
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder="Enter task"
+          className="todo-input flex-1"
+          aria-label="Enter task"
+        />
+        <button disabled={!inputText.trim()}>Add</button>
+      </form>
+      {/* <div className="flex flex-row">
         <input
           type="text"
           value={inputText}
@@ -80,7 +103,7 @@ const Todo = ({ className }: TodoProps) => {
         <button disabled={!inputText.trim()} onClick={addTask}>
           Add
         </button>
-      </div>
+      </div> */}
 
       <div>
         {todoList.map((item) => (

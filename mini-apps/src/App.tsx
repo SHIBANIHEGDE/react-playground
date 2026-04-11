@@ -1,12 +1,10 @@
 import "./App.css";
-import Todo from "./02-todo-app/Todo";
+import Autocomplete from "./05-autocomplete/Autocomplete";
 function App() {
   return (
-    <div className="root-container" >
-     <Todo className="flex-1" />
+    <div className="root-container">
+      <Autocomplete className="flex-1" />
     </div>
-      
-    
   );
 }
 
