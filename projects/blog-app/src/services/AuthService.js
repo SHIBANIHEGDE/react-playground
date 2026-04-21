@@ -46,6 +46,13 @@ class AuthService {
       };
     }
   }
+  async logout() {
+    try {
+      await this.account.deleteSessions();
+    } catch (err) {
+      console.error("Could not log out the user", err);
+    }
+  }
   async getCurrentUser() {
     try {
       const user = await this.account.get();
@@ -63,5 +70,6 @@ class AuthService {
       };
     }
   }
+  async logout() {}
 }
 export default new AuthService();
