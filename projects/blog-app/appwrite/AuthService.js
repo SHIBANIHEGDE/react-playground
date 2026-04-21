@@ -1,17 +1,10 @@
 import { Client, Account, ID } from "appwrite";
-import { config } from "../../conf/conf";
+import { account } from "./config";
 class AuthService {
-  client;
-  account;
-  constructor() {
-    this.client = new Client()
-      .setEndpoint(config.appwriteUrl) // Your API Endpoint
-      .setProject(config.projectId);
-    this.account = new Account(this.client);
-  }
+  constructor() {}
   async createUser({ email, password }) {
     try {
-      const user = await this.account.create({
+      const user = await account.create({
         userId: ID.unique(),
         email: email,
         password: password,
@@ -30,7 +23,7 @@ class AuthService {
   }
   async login({ email, password }) {
     try {
-      const session = await this.account.createEmailPasswordSession({
+      const session = await account.createEmailPasswordSession({
         email: email,
         password: password,
       });
@@ -48,14 +41,14 @@ class AuthService {
   }
   async logout() {
     try {
-      await this.account.deleteSessions();
+      await account.deleteSessions();
     } catch (err) {
       console.error("Could not log out the user", err);
     }
   }
   async getCurrentUser() {
     try {
-      const user = await this.account.get();
+      const user = await account.get();
       return {
         success: true,
         data: user,
