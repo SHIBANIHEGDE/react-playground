@@ -70,6 +70,5 @@ class AuthService {
       };
     }
   }
-  async logout() {}
 }
 export default new AuthService();
