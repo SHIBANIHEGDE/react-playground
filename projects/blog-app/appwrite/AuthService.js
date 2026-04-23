@@ -14,7 +14,7 @@ class AuthService {
         data: user,
       };
     } catch (err) {
-      console.log("count create new user");
+      console.log("count create new user", err);
       return {
         success: false,
         error: err.message || "Could not create new user",
@@ -22,6 +22,7 @@ class AuthService {
     }
   }
   async login({ email, password }) {
+    console.log("in login");
     try {
       const session = await account.createEmailPasswordSession({
         email: email,
@@ -47,8 +48,10 @@ class AuthService {
     }
   }
   async getCurrentUser() {
+    console.log("in get current user");
     try {
       const user = await account.get();
+      console.log("response", user);
       return {
         success: true,
         data: user,
@@ -57,6 +60,8 @@ class AuthService {
       // Logged in
     } catch (err) {
       // Not logged in
+      console.log("Could not fetch user details", err);
+      console.log("Could not fetch user details", err.code);
       return {
         success: false,
         error: err.message || "User is not logged in",
