@@ -43,8 +43,16 @@ class AuthService {
   async logout() {
     try {
       await account.deleteSessions();
+      return {
+        success: true,
+        data: null,
+      };
     } catch (err) {
       console.error("Could not log out the user", err);
+      return {
+        success: false,
+        error: err.message || "Could not log out the user",
+      };
     }
   }
   async getCurrentUser() {
@@ -69,4 +77,4 @@ class AuthService {
     }
   }
 }
-export default new AuthService();
+export default AuthService;
